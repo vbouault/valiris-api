@@ -27,6 +27,9 @@ process.on('beforeExit', () => {
 // middlewares
 app.use((req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
+  if(req.method === 'OPTIONS') {
+    res.setHeader('Access-Control-Allow-Headers', 'Accept, Content-Type')
+  }
 })
 app.use(express.json());
 app.use(cors());
