@@ -26,7 +26,7 @@ process.on('beforeExit', () => {
 
 // middlewares
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 app.use('/uploads', express.static('uploads'));
 
 if (process.env.NODE_ENV !== 'production') {
