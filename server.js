@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
-const cors = require('cors');
+// const cors = require('cors');
 const YAML = require('yamljs');
 const swaggerDocument = YAML.load('./docs/swagger.yaml');
 const extractClientLanguage = require('./middlewares/extractClientLanguage');
@@ -32,7 +32,7 @@ app.use((req, res) => {
   }
 })
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 app.use('/uploads', express.static('uploads'));
 
 if (process.env.NODE_ENV !== 'production') {
